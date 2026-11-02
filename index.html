@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Découvrez l'informatique, l'intelligence artificielle, les métiers du numérique et les technologies de demain.">
+<title>INFORMATIQUE & INTELLIGENCE ARTIFICIELLE</title>
+<style>
+:root{
+--navy:#091827;
+--blue:#102d46;
+--cyan:#39d6c5;
+--white:#f5f9fc;
+--muted:#b9c9d5;
+--dark:#0d2030;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--navy);color:var(--white);line-height:1.7}
+a{text-decoration:none;color:inherit}
+header{
+position:sticky;top:0;z-index:10;
+display:flex;justify-content:space-between;align-items:center;
+gap:20px;padding:18px 7%;
+background:rgba(9,24,39,.96);
+border-bottom:1px solid rgba(57,214,197,.2);
+}
+.logo{font-size:17px;font-weight:900;letter-spacing:2px}
+.logo span{color:var(--cyan)}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{font-size:12px;color:var(--muted)}
+nav a:hover{color:var(--cyan)}
+.hero{
+min-height:650px;padding:100px 8%;
+display:grid;grid-template-columns:1.2fr .8fr;
+align-items:center;gap:40px;
+background:radial-gradient(circle at 80% 40%,#17465b 0,transparent 35%),linear-gradient(120deg,#091827,#102d46);
+}
+.tag{color:var(--cyan);font-size:12px;font-weight:bold;letter-spacing:3px;text-transform:uppercase}
+h1{font-size:clamp(42px,7vw,78px);line-height:1.05;margin:24px 0}
+h1 span{color:var(--cyan)}
+.hero p{max-width:620px;color:var(--muted);font-size:16px}
+.buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.btn{padding:13px 21px;border-radius:7px;font-weight:bold;font-size:13px;display:inline-block}
+.primary{background:var(--cyan);color:#06242c}
+.secondary{border:1px solid #8ba6b7;color:white}
+.btn:hover{transform:translateY(-3px)}
+.orbit{
+width:min(320px,90%);aspect-ratio:1;border:2px solid var(--cyan);
+border-radius:50%;display:grid;place-items:center;margin:auto;
+box-shadow:0 0 65px rgba(57,214,197,.12);
+position:relative
+}
+.orbit strong{font-size:95px;color:var(--cyan)}
+.orbit small{position:absolute;bottom:40px;letter-spacing:3px;font-size:10px}
+section{padding:85px 8%}
+.heading{max-width:750px;margin-bottom:38px}
+.heading h2{font-size:clamp(30px,5vw,49px);line-height:1.15;margin:12px 0}
+.heading p{color:var(--muted)}
+.eyebrow{color:var(--cyan);font-size:11px;font-weight:bold;letter-spacing:2px}
+.creator{
+background:#10283b;padding:30px 8%;border-top:1px solid #25475a;
+border-bottom:1px solid #25475a
+}
+.creator h2{font-size:27px;color:var(--cyan);margin-bottom:8px}
+.creator p{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+background:#10283b;border:1px solid #244357;border-radius:12px;
+padding:25px;transition:.25s
+}
+.card:hover{transform:translateY(-5px);border-color:var(--cyan)}
+.card .icon{font-size:32px}
+.card h3{font-size:20px;margin:13px 0 8px}
+.card p{font-size:13px;color:var(--muted)}
+.dark{background:#0c2030}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.era{padding:22px;background:#10283b;border-top:3px solid var(--cyan)}
+.era b{color:var(--cyan);font-size:12px}
+.era h3{margin:12px 0}
+.era p{font-size:13px;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.step{padding:25px;background:#102d46;border-radius:10px}
+.step span{font-size:30px;color:var(--cyan);font-weight:bold}
+.step h3{margin:10px 0}
+.step p{font-size:13px;color:var(--muted)}
+.career{display:grid;grid-template-columns:55px 1fr;gap:15px;padding:20px;border:1px solid #244357;border-radius:10px}
+.career .icon{font-size:30px}
+.career h3{font-size:17px}
+.career p{font-size:13px;color:var(--muted)}
+.note{color:var(--muted);font-size:12px;margin-top:22px}
+.callout{padding:25px;border-left:4px solid var(--cyan);background:#10283b;margin-top:25px}
+.contact{text-align:center;background:linear-gradient(130deg,#102d46,#091827)}
+.contact .heading{margin:0 auto 25px}
+.contact h2{font-size:clamp(32px,5vw,48px)}
+.contact-links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:25px}
+.contact-links a{border:1px solid var(--cyan);padding:12px 17px;border-radius:7px;font-size:13px}
+footer{padding:25px 8%;display:flex;justify-content:space-between;gap:15px;background:#06111c;color:var(--muted);font-size:12px}
+footer strong{color:var(--cyan)}
+@media(max-width:800px){
+header{align-items:flex-start;flex-direction:column}
+nav{gap:12px}
+.hero{grid-template-columns:1fr;text-align:center;padding-top:75px}
+.hero p{margin:auto}
+.buttons{justify-content:center}
+.orbit{width:230px;margin-top:30px}
+.grid,.timeline,.steps{grid-template-columns:1fr}
+.career{grid-template-columns:45px 1fr}
+footer{flex-direction:column;text-align:center}
+section{padding:65px 7%}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">NUMÉRIQUE<span>.</span></div>
+<nav>
+<a href="#accueil">Accueil</a>
+<a href="#informatique">Informatique</a>
+<a href="#histoire">Histoire</a>
+<a href="#avantages">Avantages</a>
+<a href="#formation">Formation</a>
+<a href="#metiers">Métiers</a>
+<a href="#ia">Intelligence artificielle</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<main>
+<section class="hero" id="accueil">
+<div>
+<div class="tag">Comprendre · Apprendre · Innover</div>
+<h1>L'informatique<br>façonne notre <span>monde.</span></h1>
+<p>Bienvenue dans un univers consacré à l'informatique et à l'intelligence artificielle. Découvre les technologies qui transforment notre quotidien, les métiers du numérique et les innovations qui préparent demain.</p>
+<div class="buttons">
+<a class="btn primary" href="#informatique">Explorer le site ↓</a>
+<a class="btn secondary" href="#metiers">Découvrir les métiers</a>
+</div>
+</div>
+<div class="orbit">
+<strong>01</strong>
+<small>LE MONDE NUMÉRIQUE</small>
+</div>
+</section>
+
+<div class="creator">
+<div class="eyebrow">UN PROJET DE PARTAGE ET DE CONNAISSANCE</div>
+<h2>AKA KOUAKOU CHRIST</h2>
+<p>Créateur de cet espace de découverte consacré à l'informatique et à l'intelligence artificielle. Une initiative pour apprendre, transmettre des connaissances et encourager la culture numérique.</p>
+</div>
+
+<section id="informatique">
+<div class="heading">
+<div class="eyebrow">01 — PRÉSENTATION</div>
+<h2>Qu'est-ce que l'informatique ?</h2>
+<p>Une technologie devenue indispensable dans notre société.</p>
+</div>
+<div class="grid">
+<article class="card"><div class="icon">💻</div><h3>Définition</h3><p>L'informatique est la science du traitement automatique de l'information à l'aide des ordinateurs et des systèmes numériques.</p></article>
+<article class="card"><div class="icon">⚙️</div><h3>Fonctionnement</h3><p>Elle associe le matériel, les logiciels, les données et les réseaux pour exécuter des tâches et résoudre des problèmes.</p></article>
+<article class="card"><div class="icon">🌍</div><h3>Utilité</h3><p>Elle intervient dans l'éducation, la santé, le commerce, les transports, l'agriculture, les banques et les communications.</p></article>
+</div>
+</section>
+
+<section class="dark" id="histoire">
+<div class="heading">
+<div class="eyebrow">02 — HISTOIRE</div>
+<h2>De la machine à calculer à l'intelligence artificielle.</h2>
+<p>Le monde informatique a connu une évolution remarquable au fil des décennies.</p>
+</div>
+<div class="timeline">
+<article class="era"><b>AVANT 1940</b><h3>Les fondations</h3><p>Les machines à calculer et les premières idées de programmation préparent l'informatique moderne.</p></article>
+<article class="era"><b>1940–1970</b><h3>Les premiers ordinateurs</h3><p>Les ordinateurs électroniques font leur apparition et les langages de programmation progressent.</p></article>
+<article class="era"><b>1980–2000</b><h3>L'ère du Web</h3><p>Les ordinateurs personnels et Internet rendent le numérique accessible à un public plus large.</p></article>
+<article class="era"><b>2000–AUJOURD'HUI</b><h3>Le monde connecté</h3><p>Smartphones, cloud, réseaux sociaux, données massives et intelligence artificielle transforment les usages.</p></article>
+</div>
+</section>
+
+<section id="avantages">
+<div class="heading">
+<div class="eyebrow">03 — AVANTAGES ET LIMITES</div>
+<h2>Une technologie aux possibilités immenses.</h2>
+<p>L'informatique facilite de nombreuses activités, mais nécessite aussi des usages responsables.</p>
+</div>
+<div class="grid">
+<article class="card"><div class="icon">⚡</div><h3>Rapidité</h3><p>Traiter rapidement des informations et automatiser certaines opérations.</p></article>
+<article class="card"><div class="icon">🌐</div><h3>Communication</h3><p>Échanger et collaborer à distance avec des personnes du monde entier.</p></article>
+<article class="card"><div class="icon">📚</div><h3>Éducation</h3><p>Accéder à des cours, des bibliothèques numériques et des formations.</p></article>
+<article class="card"><div class="icon">🔬</div><h3>Recherche</h3><p>Contribuer aux progrès scientifiques, médicaux et technologiques.</p></article>
+<article class="card"><div class="icon">🔐</div><h3>Cybersécurité</h3><p>Les données et les systèmes doivent être protégés contre les menaces numériques.</p></article>
+<article class="card"><div class="icon">⚖️</div><h3>Responsabilité</h3><p>Les usages excessifs, les inégalités d'accès et les fausses informations demandent de la vigilance.</p></article>
+</div>
+</section>
+
+<section class="dark" id="formation">
+<div class="heading">
+<div class="eyebrow">04 — ÉDUCATION ET FORMATION</div>
+<h2>Comment apprendre l'informatique ?</h2>
+<p>La progression passe par les connaissances, la pratique et la curiosité.</p>
+</div>
+<div class="steps">
+<article class="step"><span>01</span><h3>Construire les bases</h3><p>Découvrir les composants d'un ordinateur, les systèmes, les réseaux, la logique et l'algorithmique.</p></article>
+<article class="step"><span>02</span><h3>Choisir une spécialité</h3><p>Explorer le développement, les réseaux, la cybersécurité, les données ou l'intelligence artificielle.</p></article>
+<article class="step"><span>03</span><h3>Passer à la pratique</h3><p>Créer des projets, apprendre de ses erreurs, travailler en équipe et améliorer ses compétences.</p></article>
+</div>
+<div class="callout"><strong>Conseil :</strong> commence par de petits projets. La pratique régulière permet de transformer progressivement les connaissances en compétences.</div>
+</section>
+
+<section id="metiers">
+<div class="heading">
+<div class="eyebrow">05 — LES MÉTIERS DU NUMÉRIQUE</div>
+<h2>Un secteur riche en possibilités.</h2>
+<p>Voici quelques professions liées à l'informatique et aux nouvelles technologies.</p>
+</div>
+<div class="grid">
+<article class="career"><div class="icon">👨‍💻</div><div><h3>Développeur informatique</h3><p>Conçoit des sites web, applications et logiciels.</p></div></article>
+<article class="career"><div class="icon">🌐</div><div><h3>Administrateur réseau</h3><p>Installe et entretient les réseaux et serveurs informatiques.</p></div></article>
+<article class="career"><div class="icon">🔒</div><div><h3>Expert en cybersécurité</h3><p>Protège les systèmes et les informations numériques.</p></div></article>
+<article class="career"><div class="icon">📊</div><div><h3>Analyste de données</h3><p>Étudie les données pour aider à prendre des décisions.</p></div></article>
+<article class="career"><div class="icon">🤖</div><div><h3>Ingénieur en IA</h3><p>Conçoit et évalue des systèmes d'intelligence artificielle.</p></div></article>
+<article class="career"><div class="icon">🎨</div><div><h3>Designer UX/UI</h3><p>Imagine des interfaces numériques faciles à utiliser.</p></div></article>
+</div>
+<p class="note">Les formations, les conditions d'accès et les rémunérations varient selon les pays, les établissements, les compétences et l'expérience.</p>
+</section>
+
+<section class="dark" id="ia">
+<div class="heading">
+<div class="eyebrow">06 — INTELLIGENCE ARTIFICIELLE</div>
+<h2>Comprendre une révolution technologique.</h2>
+<p>L'intelligence artificielle est un domaine de l'informatique qui développe des systèmes capables d'accomplir certaines tâches associées à l'intelligence humaine.</p>
+</div>
+<div class="grid">
+<article class="card"><div class="icon">🧠</div><h3>Apprentissage automatique</h3><p>Des modèles apprennent des régularités à partir de données afin de produire des prédictions ou des résultats.</p></article>
+<article class="card"><div class="icon">💬</div><h3>IA générative</h3><p>Certains systèmes peuvent générer du texte, des images, du son et d'autres contenus.</p></article>
+<article class="card"><div class="icon">🏥</div><h3>Applications</h3><p>L'IA peut assister la recherche, l'éducation, la médecine, l'agriculture et plusieurs activités professionnelles.</p></article>
+</div>
+<div class="callout"><strong>À retenir :</strong> une intelligence artificielle peut se tromper. Il faut vérifier ses réponses, protéger les informations personnelles et garder un regard critique.</div>
+</section>
+
+<section>
+<div class="heading">
+<div class="eyebrow">07 — LES TECHNOLOGIES DE DEMAIN</div>
+<h2>À quoi pourrait ressembler le futur ?</h2>
+<p>Plusieurs domaines continuent de transformer notre environnement.</p>
+</div>
+<div class="grid">
+<article class="card"><div class="icon">🦾</div><h3>Robotique</h3><p>Des machines capables d'assister les humains dans diverses activités.</p></article>
+<article class="card"><div class="icon">☁️</div><h3>Cloud computing</h3><p>Des données et services accessibles à distance grâce à Internet.</p></article>
+<article class="card"><div class="icon">🥽</div><h3>Réalité virtuelle</h3><p>Des environnements immersifs pour apprendre, créer et simuler.</p></article>
+<article class="card"><div class="icon">📡</div><h3>Objets connectés</h3><p>Des appareils qui échangent des informations par des réseaux.</p></article>
+<article class="card"><div class="icon">🌱</div><h3>Numérique responsable</h3><p>Des technologies conçues pour limiter le gaspillage des ressources.</p></article>
+<article class="card"><div class="icon">🧬</div><h3>Innovation scientifique</h3><p>Des outils numériques qui soutiennent la recherche et les découvertes.</p></article>
+</div>
+</section>
+
+<section class="dark">
+<div class="heading">
+<div class="eyebrow">08 — BONNES PRATIQUES</div>
+<h2>Devenir un utilisateur responsable.</h2>
+<p>La culture numérique commence par des gestes simples.</p>
+</div>
+<div class="grid">
+<article class="card"><div class="icon">🔑</div><h3>Sécuriser ses comptes</h3><p>Utiliser des mots de passe solides et différents et activer la double authentification.</p></article>
+<article class="card"><div class="icon">🔎</div><h3>Vérifier les informations</h3><p>Comparer les sources et vérifier les contenus avant de les partager.</p></article>
+<article class="card"><div class="icon">🤝</div><h3>Respecter la vie privée</h3><p>Ne pas diffuser les informations personnelles ou les photos d'autrui sans autorisation.</p></article>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="heading">
+<div class="eyebrow">09 — CONTACT ET PRÉSENTATION</div>
+<h2>Le numérique ouvre des portes. À nous de les explorer.</h2>
+<p>Merci de visiter cet espace consacré à la connaissance, à l'innovation et aux technologies.</p>
+</div>
+<h2>AKA KOUAKOU CHRIST</h2>
+<p>Créateur du site — Informatique & Intelligence Artificielle</p>
+<div class="contact-links">
+<a href="mailto:christkeavaneakakouakou@gmail.com">✉ Envoyer un e-mail</a>
+<a href="tel:+2250798875105">☎ 07 98 87 51 05</a>
+</div>
+</section>
+</main>
+
+<footer>
+<span>© <strong>AKA KOUAKOU CHRIST</strong> — 2026</span>
+<span>Comprendre aujourd'hui · Inventer demain.</span>
+</footer>
+</body>
+  </html>
+                                                 
