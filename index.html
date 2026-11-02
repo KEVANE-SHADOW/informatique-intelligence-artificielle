@@ -1,9 +1,16 @@
 
+<!DOCTYPE html>
 
 <html lang="fr">
   
-<!DOCTYPE html>
-<html lang="fr">
+<style>
+html,body{width:100%;height:100%;overflow:hidden}
+#app{height:100svh;min-height:100svh;display:flex;flex-direction:row;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth}
+main{display:contents}
+main>section,footer{flex:0 0 100vw;width:100vw;height:100svh;min-height:100svh;overflow-y:auto;scroll-snap-align:start;scroll-snap-stop:always}
+footer{align-items:center}
+@media(max-width:760px){main>section,footer{padding-top:90px;padding-bottom:35px}}
+</style>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
